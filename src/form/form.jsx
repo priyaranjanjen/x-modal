@@ -22,13 +22,17 @@ export default function Form({setIsModalOpen}){
     const handleSubmit= (e) => {
         e.preventDefault();
 
+        if(!formData.email.includes('@')){
+            alert("Invalid email")
+        }
+
         if (formData.phone.length !== 10 || isNaN(formData.phone)) {
-            alert('Invalid phone number. Please enter a 10-digit phone number.');
+            alert('Invalid phone number');
             return;
         }
 
         if (new Date(formData.dob) > new Date()) {
-            alert('Invalid date of birth. Date of birth cannot be in future.');
+            alert('Invalid date of birth');
             return;
         }
 
