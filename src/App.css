@@ -1,0 +1,31 @@
+.modal-section {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Set the height of the section to 100% of the viewport height */
+}
+
+.modal-section button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(57, 165, 205);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 10; /* Ensure the overlay is above the modal */
+}
+
+.modal {
+  position: fixed; /* Change position to fixed */
+  top: 50%; /* Set top to 50% of the viewport */
+  left: 50%; /* Set left to 50% of the viewport */
+  transform: translate(-50%, -50%); /* Use transform to move the modal to the center */
+  background-color: #fff;
+}
