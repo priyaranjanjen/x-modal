@@ -23,16 +23,17 @@ export default function Form({setIsModalOpen}){
         e.preventDefault();
 
         if(!formData.email.includes('@')){
-            alert("Invalid email")
+            alert("Invalid email. Please check your email address.");
+            return;
         }
 
         if (formData.phone.length !== 10 || isNaN(formData.phone)) {
-            alert('Invalid phone number');
+            alert("**Invalid phone number. Please enter a 10-digit phone number.");
             return;
         }
 
         if (new Date(formData.dob) > new Date()) {
-            alert('Invalid date of birth');
+            alert('Invalid date of birth. Date of birth cannot be in future');
             return;
         }
 
@@ -81,7 +82,7 @@ export default function Form({setIsModalOpen}){
                     onChange={handleChange}
                 />
 
-                <button type='submit'>Submit</button>
+                <button type='submit' className='submit-button'>Submit</button>
             </form>
         </div>
     )
